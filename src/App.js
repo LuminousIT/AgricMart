@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+
+
+import Signin from './components/pages/Signin'
+import Dashboard from './components/pages/Dashboard'
+import CreateAgent from './components/pages/CreateAgent'
+import ViewAgent from './components/pages/ViewAgents'
+import UpdateAgent from './components/pages/UpdateAgent'
+import Error from './components/pages/Error'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Switch>
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/" component={Signin} />
+      <Route exact path="/create" component={CreateAgent} />
+      <Route exact path="/view" component={ViewAgent} />
+      <Route exact path="/view/:agent_id" component={UpdateAgent} />
+      <Route  component={Error} />
+    </Switch>
+    </BrowserRouter>
+    
   );
 }
 
