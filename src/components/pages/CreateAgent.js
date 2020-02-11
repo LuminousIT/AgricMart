@@ -88,7 +88,7 @@ class CreateAgent extends Component {
                         <div className="input-field">
                             <button className="btn pink lighten-1 z-depth-0">Submit</button>
                             <div className="red-text">
-                                {this.state.statusCode === "200" ? alert("Entry has been created") :<p>Entry Failed</p>} 
+                                {this.state.statusCode === "200" ? alert("Entry has been created") :<p></p>} 
                             </div>
                         </div>
                     </form>
