@@ -20,7 +20,7 @@ export class Dashboard extends Component {
                     <div className="card z-depth-1 ">
                     <div className="card-content grey-text text-darken-3">
                         <Link to="/create">
-                        <span className="card-title text-center"> Create New Agent Profile </span>
+                        <span className="card-title "> Create New Agent Profile </span>
                         </Link>
                         
                         
@@ -32,7 +32,7 @@ export class Dashboard extends Component {
                     <div className="card z-depth-1 ">
                     <div className="card-content grey-text text-darken-3">
                         <Link to="/view">
-                            <span className="card-title text-center"> View Agents </span>
+                            <span className="card-title "> View Agents </span>
                         </Link>
                         
                         
