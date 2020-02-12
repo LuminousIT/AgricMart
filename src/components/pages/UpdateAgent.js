@@ -66,20 +66,7 @@ export class UpdateAgent extends Component {
             console.log(err);
         })
         
-        // const agents = this.state.agentsInfo;
-        // const agentsID = this.state.agentID;
-        // console.log(agentsID, agents);
-        // var agent= null;
-        // agents.forEach(item=>{
-        //     item.map(i=> {
-        //         if (i.agentID=== agentsID) {
-        //             console.log("match", i.fullname);
-        //             agent = i;
-        //             return agent;
-        //         }
-        //         //return;
-        //     })
-        //  });
+        
     }
 
     handleChange = (e) =>{
@@ -102,7 +89,9 @@ export class UpdateAgent extends Component {
         const headers = {
             'Content-Type': 'application/json',
             'token': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyIwIjp7ImZ1bGxuYW1lIjoiQWtpbm9sYSBFbGlhcyIsInBob25lIjoiMDgxMzUxNDY2MzYiLCJlbWFpbCI6ImVsaWFzLmFraW5AZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInB1YmxpY0tleSI6ImtycFExQ3dCdnZ2UCIsInVzZXJ0eXBlIjoiMCJ9LCJpc3MiOiJwYXlyb2xsbW5nciIsImF1ZCI6InBheXJvbGxtbmdyIiwiaWF0IjoxNTgxNDEwNDIxLCJuYmYiOjE1ODE0MTA0MjF9.2oW6vP_PDIMtSpNdiDY5_T969DfCSC0rrZMVksxJkk4',
-            "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Methods": "GET, PUT, POST, DELETE, OPTIONS"
 
           }
         const url = "https://apis.dcptap.website/agricmart/public/v1/admin/update/agent";
@@ -115,32 +104,17 @@ export class UpdateAgent extends Component {
         })
         .catch((err) => {
             console.log("error msg: ", err);
-            alert(err);
+            alert("CORS-issue",err);
         })
         // console.log(this.state);
     }
 
     render() {
-        // const agents = this.state.agentsInfo;
-        // const agentsID = this.state.agentID;
-        // console.log(agentsID, agents);
-        // var agent= null;
-        // agents.forEach(item=>{
-        //     item.map(i=> {
-        //         if (i.agentID=== agentsID) {
-        //             console.log("match", i.fullname);
-        //             agent = i;
-        //             return agent;
-        //         }
-        //         //return;
-        //     })
-        //  });
-       
-        // console.log("final match test ", this.state.agent);
+        
   
         return (
             <div>
-                {console.log("rendered state", this.state)}
+                {/* {console.log("rendered state", this.state)} */}
                 <Navbar />
                 <div className="container">
                     {/* <h3 className="text-center">Update Agent {this.state.specAgent.fullname}</h3> */}
@@ -163,11 +137,7 @@ export class UpdateAgent extends Component {
                                 <input type="number" id="phone" onChange={this.handleChange} placeholder={this.state.specAgent.phone} />
                             </div>
                             
-                            {/* <div className="input-field">
-                                <label htmlFor="username" className="active">Username</label>
-                                <input type="text" id="username" onChange={this.handleChange} />
-                            </div> */}
-
+                    
                             <div className="input-field">
                                 <label htmlFor="password" className="active">Password</label>
                                 <input type="password" id="password" onChange={this.handleChange} placeholder={this.state.specAgent.password}/>
