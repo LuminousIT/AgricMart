@@ -103,7 +103,7 @@ export class UpdateAgent extends Component {
              console.log("Here is update response ", response.status);
             this.setState({statusCode: response.status});
             console.log(this.state.statusCode);
-            alert("Update Successful");
+            alert("Update object parsed successfully. Although, changes may not reflect as API is still limited ");
         })
         .catch((err) => {
             console.log("error msg: ", err);
