@@ -33,7 +33,10 @@ class Signin extends Component {
             console.log("status code is ", this.state.statusCode);
             
         }).catch((err)=>{
-            
+            console.log("err ", err);
+            this.setState({statusCode: "err"});
+            console.log(this.state.statusCode);
+            return;
         })
         
     }
@@ -42,6 +45,9 @@ class Signin extends Component {
         if (this.state.statusCode === "0"){
             return <Redirect to="/dashboard" />
         }
+        // if (this.state.statusCode === "err" ) {
+        //     return alert("check network connection");
+        // }
         
         return (
             <div>
@@ -64,6 +70,7 @@ class Signin extends Component {
                             <button className="btn pink lighten-1 z-depth-0">Login</button>
                             <div className="red-text">
                                 {this.state.statusCode==="1"? <p>Invalid Username / Password </p> : <p></p> } 
+                                {this.state.statusCode==="err"? <p>Check Network Connection </p> : <p></p> } 
                             </div>
                         </div>
                     </form>

@@ -16,11 +16,11 @@ export class Dashboard extends Component {
             <div className="container">
             <div className="row ">
                 <h2 className="text-center welcome">Welcome, Admin</h2>
-                <div className="col s4 offset-s1">
+                <div className="col m6 ">
                     <div className="card z-depth-1 ">
                     <div className="card-content grey-text text-darken-3">
                         <Link to="/create">
-                        <span className="card-title "> Create New Agent Profile </span>
+                        <span className="card-title "> Create Agent Profile </span>
                         </Link>
                         
                         
@@ -28,7 +28,7 @@ export class Dashboard extends Component {
                     </div>
                 </div>
 
-                <div className="col s4 offset-s1">
+                <div className="col m6 ">
                     <div className="card z-depth-1 ">
                     <div className="card-content grey-text text-darken-3">
                         <Link to="/view">
