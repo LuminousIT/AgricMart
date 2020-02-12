@@ -15,7 +15,8 @@ export class UpdateAgent extends Component {
                 "password":"",
                 "agentID": ""
             }
-        }
+        },
+        statusCode: ""
     }
     componentDidMount(){
         let agentID = this.props.match.params.agent_id;
@@ -89,17 +90,19 @@ export class UpdateAgent extends Component {
         const headers = {
             'Content-Type': 'application/json',
             'token': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyIwIjp7ImZ1bGxuYW1lIjoiQWtpbm9sYSBFbGlhcyIsInBob25lIjoiMDgxMzUxNDY2MzYiLCJlbWFpbCI6ImVsaWFzLmFraW5AZ21haWwuY29tIiwidXNlcm5hbWUiOiJhZG1pbiIsInB1YmxpY0tleSI6ImtycFExQ3dCdnZ2UCIsInVzZXJ0eXBlIjoiMCJ9LCJpc3MiOiJwYXlyb2xsbW5nciIsImF1ZCI6InBheXJvbGxtbmdyIiwiaWF0IjoxNTgxNDEwNDIxLCJuYmYiOjE1ODE0MTA0MjF9.2oW6vP_PDIMtSpNdiDY5_T969DfCSC0rrZMVksxJkk4',
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
-            "Access-Control-Allow-Methods": "GET, PUT, POST, DELETE, OPTIONS"
+            // "Access-Control-Allow-Origin": "*",
+            // "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+            // "Access-Control-Allow-Methods": "GET, PUT, POST, DELETE, OPTIONS"
 
           }
         const url = "https://apis.dcptap.website/agricmart/public/v1/admin/update/agent";
         var agentData = this.state;
-        Axios.post(url, agentData, {headers: headers})
+        Axios.put(url, agentData, {headers: headers})
         .then((response) => {
-             console.log("Here is update response ", response)
-            //this.setState({statusCode: response.data.success.status});
+            console.log(response);
+             console.log("Here is update response ", response.status);
+            this.setState({statusCode: response.status});
+            console.log(this.state.statusCode);
             alert("Update Successful");
         })
         .catch((err) => {
@@ -146,7 +149,7 @@ export class UpdateAgent extends Component {
                             <div className="input-field">
                                 <button className="btn pink lighten-1 z-depth-0">Submit</button>
                                 <div className="red-text">
-                                    {/* {this.state.statusCode === "200" ? alert("Entry has been created") :<p>Entry Failed</p>}  */}
+                                    {this.state.statusCode === "200" ? alert("update successful") :<p></p>} 
                                 </div>
                             </div>
                         </form>
