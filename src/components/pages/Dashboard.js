@@ -23,8 +23,7 @@ export class Dashboard extends Component {
                         <span className="card-title text-center"> Create New Agent Profile </span>
                         </Link>
                         
-                        {/* <p>Posted by Luminous</p>
-                        <p className="grey-text"> on 3rd Nov, 2019</p> */}
+                        
                     </div>
                     </div>
                 </div>
@@ -36,8 +35,7 @@ export class Dashboard extends Component {
                             <span className="card-title text-center"> View Agents </span>
                         </Link>
                         
-                        {/* <p>Posted by Luminous</p>
-                        <p className="grey-text"> on 3rd Nov, 2019</p> */}
+                        
                     </div>
                     </div>
                 </div>

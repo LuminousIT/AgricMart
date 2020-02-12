@@ -40,14 +40,14 @@ class CreateAgent extends Component {
         var agentData = this.state;
         Axios.post(url, agentData, {headers: headers})
         .then((response) => {
-            console.log("Here is response ", response)
+            // console.log("Here is response ", response)
             this.setState({statusCode: response.data.success.status});
             
         })
         .catch((err) => {
             console.log("error msg: ", err);
         })
-        console.log(this.state);
+        // console.log(this.state);
     }
 
     render() {
