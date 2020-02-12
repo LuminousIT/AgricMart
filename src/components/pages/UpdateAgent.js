@@ -149,7 +149,7 @@ export class UpdateAgent extends Component {
                             <div className="input-field">
                                 <button className="btn pink lighten-1 z-depth-0">Submit</button>
                                 <div className="red-text">
-                                    {this.state.statusCode === "200" ? alert("update successful") :<p></p>} 
+                                    {this.state.statusCode === "200" ? alert("Update object parsed successfully. Although, changes may not reflect as API is still limited ") :<p></p>} 
                                 </div>
                             </div>
                         </form>
