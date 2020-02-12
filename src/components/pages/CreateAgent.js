@@ -62,27 +62,27 @@ class CreateAgent extends Component {
                         <div></div>
                         <div className="input-field">
                             <label htmlFor="fullname" className="active">Full Name</label>
-                            <input type="text" id="fullname" onChange={this.handleChange} />
+                            <input type="text" id="fullname" onChange={this.handleChange} required />
                         </div>
                     
                         <div className="input-field">
                             <label htmlFor="email" className="active">Email</label>
-                            <input type="email" id="email" onChange={this.handleChange} />
+                            <input type="email" id="email" onChange={this.handleChange} required />
                         </div>
 
                         <div className="input-field">
                             <label htmlFor="phone" className="active">Phone</label>
-                            <input type="number" id="phone" onChange={this.handleChange} />
+                            <input type="number" id="phone" onChange={this.handleChange} required />
                         </div>
                         
                         <div className="input-field">
                             <label htmlFor="username" className="active">Username</label>
-                            <input type="text" id="username" onChange={this.handleChange} />
+                            <input type="text" id="username" onChange={this.handleChange} required/>
                         </div>
 
                         <div className="input-field">
                             <label htmlFor="password" className="active">Password</label>
-                            <input type="password" id="password" onChange={this.handleChange} />
+                            <input type="password" id="password" onChange={this.handleChange} required/>
                         </div>
 
                         <div className="input-field">
